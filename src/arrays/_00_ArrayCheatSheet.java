@@ -19,28 +19,35 @@ public class _00_ArrayCheatSheet {
 		}
 		
 		//6. make an array of 50 integers
-		int[] i=new int[51];
+		int[] arr=new int[50];
 		
 		//7. use a for loop to make every value of the integer array a random number
-		
-		int v=i[0];
-		
 		Random r=new Random();
-	for (int j = 0; j < i.length; j++) {
-		if (i[j]<v) {
-			v=i[j];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i]=r.nextInt(50);
+		}
+		
+	
+		
+		//8. without printing the entire array, print only the smallest number in the array
+		int v=arr[0];	
+		for (int j = 0; j < arr.length; j++) {
+		if (arr[j]<v) {
+			v=arr[j];
 		}
 	}
 			
-		
-		//8. without printing the entire array, print only the smallest number in the array
-		
 	System.out.println("the smallest number is..." + v);
 		//9 print the entire array to see if step 8 was correct
-		for (int j = 0; j < i.length; j++) {
-			System.out.println(j);
+		for (int j = 0; j < arr.length; j++) {
+			System.out.println(arr[j]);
 		}
 		//10. print the largest number in the array.
-		
+		for (int j = 0; j < arr.length; j++) {
+			if (arr[j]>v) {
+				v=arr[j];
+			}
+		}
+		System.out.println("the biggest number is..." + v);
 	}
 }
