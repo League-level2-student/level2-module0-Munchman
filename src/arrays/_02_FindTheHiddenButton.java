@@ -60,12 +60,17 @@ buttons= new JButton[num];
 		Random rand = new Random();
 		hiddenButton=rand.nextInt(num);
 		//14. Set the text of the JButton located at hiddenButton the read "ME"
-
+buttons[hiddenButton].setText("me");
 		//15. Use Thread.sleep(100); to pause the program.
 		//    Surround it with a try/catch
-		
+try {
+	Thread.sleep(100);
+} catch (InterruptedException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
 		//16. Set the text of the JButton located at hiddenButton to be blank.
-		
+buttons[hiddenButton].setText("");
 	}
 
 	@Override
@@ -73,7 +78,12 @@ buttons= new JButton[num];
 		JButton buttonClicked = (JButton)e.getSource();
 		
 		//17. if the hiddenButton is clicked, tell the user that they win.
-		
+		if (buttons[hiddenButton] ==buttonClicked) {
+			JOptionPane.showMessageDialog(null, "YOU WIN!");
+		}
 		//18. else tell them to try again
+		else {
+			JOptionPane.showMessageDialog(null, "YOU LOSE! try again");
+		}
 	}
 }
